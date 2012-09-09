@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     
     ## Static Links
     #url(r'^', TemplateView.as_view(template_name='index.html'), name='index'),
-    
+    url(r'^', TemplateView.as_view(template_name='tree.html'), name='tree'),
 )
 
 # Development AND Production are using media files
