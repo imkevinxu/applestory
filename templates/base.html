@@ -64,14 +64,12 @@
             <header class="row">
                 <div class="twelve columns">
                     <a href="{% url index %}" id="headerlogo">
-                        <h1></h1>
+                        <h1><img src="/media/images/logo.png" alt=""></h1>
                     </a>
 
                     <div id="right_nav">
                         {% if user.is_authenticated %}
-                            <a href="{% url logout %}" class="small secondary button" id="logout">
-                                <img src="/media/images/power.png" alt="Log Out" />
-                            </a>
+                            <a href="{% url logout %}" class="small secondary button" id="logout"></a>
                         {% else %}
                             <a href="{% url login %}" class="small secondary button" data-reveal-id="loginModal">Log In</a>
                         {% endif %}
@@ -96,7 +94,8 @@
     {# End Content #}
 
     <div id="loginModal" class="reveal-modal small">
-        <h2>Welcome back.</h2>
+        <h2>Welcome back</h2>
+
         <form action="{% url login %}" method="post">{% csrf_token %}
             <input id="id_username" type="text" name="username" placeholder="Username" maxlength="30" />
             <input type="password" name="password" id="id_password" placeholder="Password" />

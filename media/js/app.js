@@ -3,13 +3,36 @@ jQuery(document).ready(function ($) {
   /* Javascript masterminded by Kevin Xu <kevin@imkevinxu.com>  */
 
 
+    window.compliments = ["we miss you", "you're awesome"];
+
+    function flipText(newText) {
+        flipUp == true ? ($("#new-text").text(newText), $("#old-text").hide("drop", {
+            direction: "down"
+        }, 300), $("#new-text").show("drop", {
+            direction: "up"
+        }, 300)) : ($("#old-text").text(newText), $("#old-text").show("drop", {
+            direction: "up"
+        }, 300), $("#new-text").hide("drop", {
+            direction: "down"
+        }, 300));
+        flipUp = !flipUp; // Alternating flipping direction
+    }
+
+    var interval = 2e3; // 2 seconds
+    var flipUp = true;
+    var index = 0;
+    var maxIndex = window.compliments.length - 1;
+    setInterval(function() {
+        var nextText = window.compliments[index];
+        flipText(nextText);
+        index = (index == maxIndex) ? 0 : index + 1;
+     }, interval);
 
 
 
 
 
 
-  
 
   /* TABS --------------------------------- */
   /* Remove if you don't need :) */
@@ -91,7 +114,7 @@ jQuery(document).ready(function ($) {
   $('.button.disabled').on('click.fndtn', function (event) {
     event.preventDefault();
   });
-  
+
 
   /* SPLIT BUTTONS/DROPDOWNS */
   $('.button.dropdown > ul').addClass('no-hover');
@@ -122,7 +145,7 @@ jQuery(document).ready(function ($) {
   $('.button.dropdown.large > ul').css('top', largeButtonHeight);
   $('.button.dropdown.small > ul').css('top', smallButtonHeight);
   $('.button.dropdown.tiny > ul').css('top', tinyButtonHeight);
-  
+
   $('.button.dropdown.up:not(.large):not(.small):not(.tiny) > ul').css('top', 'auto').css('bottom', normalButtonHeight - 2);
   $('.button.dropdown.up.large > ul').css('top', 'auto').css('bottom', largeButtonHeight - 2);
   $('.button.dropdown.up.small > ul').css('top', 'auto').css('bottom', smallButtonHeight - 2);

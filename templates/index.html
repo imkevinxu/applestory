@@ -6,40 +6,42 @@
 
 {% block content %}
 
-<div id="main" class="row">
-    <div class="six columns centered">
+<div id="main" class="row element">
+    <div class="twelve columns">
 
-        <form action="{% url register %}" method="post">{% csrf_token %}
+        <form action="{% url register %}" method="post" class="row">{% csrf_token %}
+            <aside id="honor" class="six columns offset-by-six element">
+                <h2 id="dearsteve">Dear Steve,
+                    <span id="dynamic-text-wrapper">
+                        <span id="old-text">we miss you</span>
+                        <span id="new-text">we miss you</span>
+                    </span>
+                </h2>
 
-            <h3>Create your own AppleStory!</h3>
+                <h3 class="message">A year ago we lost Steve Jobs, but his legacy lives on in the products  we use everyday.</h3>
+                <h3 class="share">Share your AppleStory.</h3>
 
-            {% if msg %}
-                <p class="error">{{ msg }}</p>
-            {% endif %}
+                {% if user.is_authenticated %}
+                    <a href="{% url profile user %}" class="applestory">applestory.me/{{ user }}</a>
+                {% else %}
+                    <input type="text" name="username" placeholder="Username" value="{{ username }}"/>
+                {% endif %}
 
-            {% if user.is_authenticated %}
-                <input type="text" name="username" placeholder="Username" value="{{ user }}"/>
-            {% else %}
-                <input type="text" name="username" placeholder="Username" value="{{ username }}"/>
-            {% endif %}
-
-            {% if user.is_authenticated %}
-                <a href="{% url profile user %}" class="button">Go to your profile</a>
-            {% else %}
-                <div>
-                    <input type="email" name="email" placeholder="Email" value="{{ email }}">
-                    <input type="password" name="password" placeholder="Password" />
+                <div class="hidden">
                     <input type="submit" value="Create" class="button">
                 </div>
-            {% endif %}
-
+            </aside>
         </form>
 
 
 
+    </div>
+</div>
 
+<div class="row" class="element">
+    <div class="twelve columns">
 
-
+        <h1>Hello</h1>
 
     </div>
 </div>

@@ -2,9 +2,9 @@
 {% block title %}Log In - {{ block.super }}{% endblock %}
 {% block content %}
 
-<div id="main" class="row">
-    <div class="five columns centered" id="login">
-        <h2>Welcome</h2>
+<div id="login" class="row">
+    <div class="five columns centered">
+        <h2>Welcome back</h2>
 
         <form action="{% url login %}" method="post">{% csrf_token %}
 

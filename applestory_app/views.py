@@ -35,7 +35,6 @@ def index(request):
     return render(request, "index.html", locals())
 
 
-
 #TODO: REALLY JANKY REGISTRATION ERROR CHECKING
 def register(request):
     if request.POST:
