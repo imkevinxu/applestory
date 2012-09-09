@@ -59,10 +59,8 @@ header #right_nav {
     top: 25px;
 }
 
-header #right_nav i {
-    position: relative;
-    padding-right: 4px;
-    top: 1px;
+header #logout img {
+    width: 16px;
 }
 
 

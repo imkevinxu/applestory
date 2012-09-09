@@ -16,7 +16,7 @@ urlpatterns = patterns('applestory_app.views',
 
 
     url(r'^register/$', 'register', name='register'),
-
+    url(r'^edit/$', 'edit', name='edit'),
 
     url(r'^(?P<username>\w+)/$', 'profile', name='profile'),
 

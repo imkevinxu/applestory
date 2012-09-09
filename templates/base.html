@@ -64,18 +64,18 @@
             <header class="row">
                 <div class="twelve columns">
                     <a href="{% url index %}" id="headerlogo">
-                        <h1>AppleStory</h1>
+                        <h1></h1>
                     </a>
 
                     <div id="right_nav">
                         {% if user.is_authenticated %}
-                            <a href="{% url profile user %}" class="small button">View My Profile</a>
-                            <a href="{% url logout %}" class="small secondary button"><i class="foundicon-lock"></i>Logout</a>
+                            <a href="{% url logout %}" class="small secondary button" id="logout">
+                                <img src="/media/images/power.png" alt="Log Out" />
+                            </a>
                         {% else %}
-                            <a href="{% url login %}" class="small secondary button"><i class="accessibility foundicon-key"></i>Log In</a>
+                            <a href="{% url login %}" class="small secondary button" data-reveal-id="loginModal">Log In</a>
                         {% endif %}
                     </div>
-                    <hr/>
 
                 </div>
             </header>
@@ -94,6 +94,17 @@
         </div>
     </div>
     {# End Content #}
+
+    <div id="loginModal" class="reveal-modal small">
+        <h2>Welcome back.</h2>
+        <form action="{% url login %}" method="post">{% csrf_token %}
+            <input id="id_username" type="text" name="username" placeholder="Username" maxlength="30" />
+            <input type="password" name="password" id="id_password" placeholder="Password" />
+            <input class="success button" type="submit" value="Log In" />
+        </form>
+
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>

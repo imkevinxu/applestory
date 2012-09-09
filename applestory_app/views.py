@@ -80,3 +80,13 @@ def profile(request, username=None):
 
     return render(request, "profile.html", locals())
 
+@login_required
+def edit(request):
+    if request.POST:
+        displayname = request.POST['displayname']
+        if displayname:
+            profile = request.user.profile
+            profile.displayname = displayname
+            profile.save()
+
+    return redirect("profile", username=request.user)

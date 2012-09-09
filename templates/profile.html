@@ -9,7 +9,40 @@
 <div id="main" class="row">
     <div class="twelve columns">
 
-        <h1>Hello {{ user }}</h1>
+        {% if username == user.username %}
+            <h1>Hello {{ user }}</h1>
+
+            <form action="{% url edit %}" method="post">{% csrf_token %}
+
+                <label for="displayname">Display Name:</label>
+                <input type="text" name="displayname" placeholder="" id="displayname" value="{{ user.profile.displayname }}">
+
+                <label for="profilepicture">Profile Picture: (not working)</label>
+                <input type="file" name="profilepicture" placeholder="" id="profilepicture" >
+                <br/>
+
+                <label for="coverphoto">Cover Photo: (not working</label>
+                <input type="file" name="coverphoto" placeholder="" id="coverphoto" >
+                <br/>
+
+                <br/>
+                <input type="submit" value="Update" class="button">
+
+            </form>
+
+            <form action="{% url edit %}" method="post">{% csrf_token %}
+
+                <label for="displayname">Display Name:</label>
+                <input type="text" name="displayname" placeholder="" id="displayname" >
+
+
+                <input type="submit" value="Add" class="button">
+
+            </form>
+        {% endif %}
+
+        <hr/>
+        <h1>AppleStory Tree</h1>
 
     </div>
 </div>
