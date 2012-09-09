@@ -6,6 +6,8 @@ Auto-generated from [imkevinxu](https://github.com/imkevinxu)'s [Django Project 
 ### Development Team
 
 * Kevin Xu <kevin@imkevinxu.com>
+* Katherine Chen <katherine.l.l.chen@gmail.com>
+* Viraj Bindra <viraj.s.bindra@gmail.com>
 
 ## Getting Started
 
