@@ -1,9 +1,9 @@
-Applestory
+AppleStory
 ================
 
 Auto-generated from [imkevinxu](https://github.com/imkevinxu)'s [Django Project Builder](https://github.com/imkevinxu/django-projectbuilder)
 
-### Development Team
+### Development/Design Team
 
 * Kevin Xu <kevin@imkevinxu.com>
 * Katherine Chen <katherine.l.l.chen@gmail.com>

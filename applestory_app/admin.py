@@ -1,10 +1,10 @@
 from applestory_app.models import *
 from django.contrib import admin
 
-# class DataAdmin(admin.ModelAdmin):
-#     list_display = ('data', 'created_at')
-#     list_filter = ('created_at',)
-#     ordering = ['-created_at']
-#     search_fields = ['data']
-# 
-# admin.site.register(Data, DataAdmin)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'displayname', 'created_at')
+    list_filter = ('created_at',)
+    ordering = ['-created_at']
+    search_fields = ['user', 'displayname']
+
+admin.site.register(UserProfile, UserProfileAdmin)

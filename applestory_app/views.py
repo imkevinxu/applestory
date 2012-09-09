@@ -16,6 +16,49 @@ from applestory_app.models import *
 from applestory_app.model_forms import *
 from applestory_app.forms import *
 
-#@login_required
+### Utilities
+def username_present(username):
+    if User.objects.filter(username=username).count():
+        return True
+    return False
+
+
+
+### View functions
 def index(request):
     return render(request, "index.html", locals())
+
+
+def register(request):
+    if request.POST:
+        if request.POST.get("username") and request.POST.get("email") and request.POST.get("password"):
+
+            username = request.POST['username']
+            email = request.POST['email']
+            password = request.POST['password']
+
+            if username_present(username):
+                return redirect("index")
+
+            else:
+                user = User.objects.create_user(username, email, password)
+                user.save()
+                user = authenticate(username=username, password=password)
+                if user is not None:
+                    if user.is_active:
+                        login(request, user)
+                    else:
+                        # Return a 'disabled account' error message
+                        return redirect("index")
+                else:
+                    # Return an 'invalid login' error message.
+                    return redirect("index")\
+
+    return redirect("index")
+
+
+def profile(request, username):
+
+
+    return render(request, "profile.html", locals())
+
