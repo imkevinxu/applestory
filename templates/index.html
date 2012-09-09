@@ -17,13 +17,17 @@
                 <p class="error">{{ msg }}</p>
             {% endif %}
 
-            <input type="text" name="username" placeholder="Username" {% if user.is_authenticated %}value="{{ user }}"{% endif %}/>
+            {% if user.is_authenticated %}
+                <input type="text" name="username" placeholder="Username" value="{{ user }}"/>
+            {% else %}
+                <input type="text" name="username" placeholder="Username" value="{{ username }}"/>
+            {% endif %}
 
             {% if user.is_authenticated %}
                 <a href="{% url profile user %}" class="button">Go to your profile</a>
             {% else %}
                 <div>
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="Email" value="{{ email }}">
                     <input type="password" name="password" placeholder="Password" />
                     <input type="submit" value="Create" class="button">
                 </div>

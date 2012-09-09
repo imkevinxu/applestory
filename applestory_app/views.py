@@ -30,7 +30,6 @@ def redirect_login(request):
 
 
 
-
 ### View functions
 def index(request):
     return render(request, "index.html", locals())
@@ -40,14 +39,14 @@ def index(request):
 #TODO: REALLY JANKY REGISTRATION ERROR CHECKING
 def register(request):
     if request.POST:
-        if request.POST.get("username") and request.POST.get("email") and request.POST.get("password"):
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
 
-            username = request.POST['username']
-            email = request.POST['email']
-            password = request.POST['password']
+        if username and email and password:
 
             if username_present(username):
-                return redirect("index", msg="Username already taken")
+                msg = "Username already taken"
 
             else:
                 user = User.objects.create_user(username, email, password)
@@ -60,12 +59,12 @@ def register(request):
                         return redirect_login(request)
                     else:
                         # Return a 'disabled account' error message
-                        return redirect("index", msg="Account has been disabled")
+                        msg = "Account has been disabled"
                 else:
                     # Return an 'invalid login' error message.
-                    return redirect("index", msg="Invalid login")
+                    msg = "Invalid login"
         else:
-            return redirect("index", msg="Missing required field")
+            msg = "Missing required field"
 
     return render(request, "index.html", locals())
 
