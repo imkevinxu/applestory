@@ -1,3 +1,215 @@
+/* p3 styles */
+body {
+  margin:0;
+  padding:0;
+}
+
+.story { padding: 0; margin: 0; width: 100%; position: relative; margin: 0 auto;}
+
+article {
+  text-align:center;
+  height:100%;
+  display:block;
+}
+
+#controls {
+  position:fixed;
+  top:1%;
+  right:1%;
+  z-index:9999;
+}
+
+#controls ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+#controls li {
+  display:inline;
+  color:white;
+  font-weight:bolder;
+  padding:5px;
+  background-color:rgba(0,0,0,0.5);
+   -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#controls img {
+  height:16px;
+  padding-top:7px;
+  padding-right:5px;
+}
+
+#cover-section {
+  height:600px;
+}
+
+#cover-photo {
+  text-align:center;
+  margin:auto;
+  border:5px solid #ccc;
+  background-image:url(../images/grain.png);
+  border-radius:130px;
+    -webkit-border-radius: 130px;
+    -moz-border-radius: 130px;
+  width:260px;
+  height:260px;
+  box-shadow: 0 0px 8px rgba(34, 25, 25, 0.8);
+    -moz-box-shadow: 0 0px 8px rgba(34, 25, 25, 0.8);
+    -webkit-box-shadow: 0 0px 8px rgba(34, 25, 25, 0.8);
+}
+
+#cover-photo img {
+  height:250px;
+  border-radius:125px;
+    -webkit-border-radius: 125px;
+    -moz-border-radius: 125px;
+ 
+}
+
+
+
+#cover-bio {
+  color:white;
+  z-index:99999;
+}
+
+#cover-name {
+  font-family: 'CKAlisHand', handwritten;
+  font-size:60px;  
+  margin-bottom:2px;
+  margin-top:8px;
+  text-shadow: 1px 1px 3px #525252;
+  
+}
+
+#cover-time {
+  font-family: "Myriad Pro", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size:16px;
+  font-weight:bolder;
+  color:#3B3B3B;
+}
+
+#cover-blurb-container {
+  background-image:url(../images/grain.png);
+  width:100%;
+  text-align:center;
+  padding:15px;
+  border-bottom: 1px solid #C7C5C5;
+  line-height:140%;
+}
+
+#cover-blurb {
+  font-family: "Myriad Pro", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size:16px;
+  color:#919191;
+  width:70%;
+  text-align:center;
+  margin:auto;
+}
+
+.personal-site {
+  color:#5d5d5d;
+  
+}
+
+#spacer {
+  height:40%;
+}
+
+#tree-section {
+  height:1000px;
+  background-image:url(../images/grain.png);
+}
+
+.tree-left {
+  width:50%;
+  border-right: solid 8px #D4D4D4;
+  height:100%;
+  position:relative;
+  float:left;
+}
+
+.tree-right {
+  width:50%;
+  height:100%;
+  float:right;
+}
+
+.leaf {
+  width:80%;
+  background:white;
+  -moz-box-shadow: 0px 0px 5px rgba(197,197,197,0.9);
+   -webkit-box-shadow: 0px 0px 5px rgba(197,197,197,0.9);
+   box-shadow: 0px 0px 5px rgba(197,197,197,0.9);
+   border-radius:10px;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+  padding:25px;
+  margin:50px;
+}
+
+.right {
+  float:none;
+  margin-left:70px;
+}
+.left {
+  float:right;
+  margin-right:70px;
+}
+
+.product-branch {
+  
+}
+
+.circle {
+  background-color:rgba(0,0,0,.7);
+  border-radius:7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+  width:14px;
+  height:14px;
+  z-index:999999;
+}
+
+.circle-right {
+  
+}
+
+.product-image {
+  margin-bottom:20px;
+}
+.product-name {
+  font-size:18px;
+  font-weight:bolder;
+  padding-bottom:50px;
+  padding-top:50px;
+}
+
+.leaf .story {
+  line-height:125%;
+  font-size:14px;
+  margin-top:10px;
+}
+
+/* Backgrounds for sections */
+
+#cover-section { 
+    background: url(../images/covers/Lion.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    background-size:cover;
+}
+
+#tree-section {
+  -moz-box-shadow: 0px -5px 50px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0px -5px 50px rgba(0,0,0,0.7);
+  box-shadow: 0px -5px 50px rgba(0,0,0,0.7);
+}
+
+
 /* Artfully masterminded by Kevin Xu <kevin@imkevinxu.com> */
 
 /* -----------------------------------------
@@ -87,7 +299,7 @@ header .has-tip, header .has-tip:hover {
 
 body {
     background: #F2F2F2;
-    font-family: Myriad Pro, "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: "Myriad Pro", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 @font-face {

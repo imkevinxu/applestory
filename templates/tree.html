@@ -1,0 +1,77 @@
+{# Copy and Paste this for every html file. #}
+
+{% extends "base.html" %}
+{% block title %}{{ block.super }}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
+
+{% block content %}
+
+<div id="">
+      <div id="controls">
+        <ul>
+          <li id="settings" class="control"><img src="media/images/icon_settings.png" />My settings</li>
+          <li id="add-story" class="control"><img src="media/images/icon_add.png" />Add story</li>
+        </ul>
+      </div>
+      <section id="cover-section" class="story" data-speed="8" data-type="background">    	
+    		<article>
+    		  <div id="spacer">&nbsp;
+    		  </div>
+    		     <div id="cover-bio">
+      		    <div id="cover-photo"><img src="media/images/propic.jpg"></div>
+      		    <div id="cover-name"><span>Viraj Bindra</span></div>
+      		    
+      		  </div>
+      		</div>
+      		
+    	  </article>
+    	</section>
+    	
+    	<section id="tree-section" class="story" data-speed="4" data-type="background" data-offsetY="250">
+    	  <div id="cover-blurb-container">
+		      <div id="cover-blurb">
+  		      <span>I'm a graphic designer and Apple enthusiast currently at Stanford. I started using Apple products after pitching my parents on a family Mac back in 2006 and I haven't looked back since. | <span class="personal-site"><a href:"http://twitter.com/viraj_bindra/">twitter.com/viraj_bindra</a></span></span>
+  		      <div id="cover-time">15 years, 11 products with Apple</div>
+  		    </div>
+  		  </div>
+    	  <div class="tree-left">
+    	    <div class="leaf-container">
+    	        <div class="product-branch">
+      	        <div class="circle circle-left">
+      	        </div>
+      	      </div>
+    	        <div class="leaf left">
+        	      <div class="product-image">
+        	        <img src="media/images/products/1998-imac.jpeg" />
+        	      </div>
+        	      <div class="product-story">
+        	        <span class="product-name">iMac</span>
+        	        <p class="story">I remember my brother and I used to fight over the iMac to play MathBlaster and ClueFinders (the educational but fun games our parents tricked us into playing). I loved staring through the see through back wondering how things worked.</p>
+        	      </div>
+      	      </div>
+    	    </div>
+    	  </div>
+    	  <div class="tree-right">
+    	    <div class="leaf-container">
+    	      <div class="product-branch">
+    	        <div class="circle circle-right">
+    	        </div>
+    	      </div>
+    	      <div class="leaf right" style="margin-top:200px;">
+      	      <div class="product-image">
+      	        <img src="media/images/products/2001-powerbook-g4.jpeg" />
+      	      </div>
+      	      <span class="product-name">Powerbook G4</span>
+    	        <p class="story">When I got this, no one else had it. Apple was still something weird and different. I loved this Powerbook until someone sat on it in an airplane and broke the plasma screen. We couldn't afford to fix it so I had to go back to my Toshiba.</p>
+      	    </div>
+    	    </div>
+    	  </div>
+    	</section>
+
+</div>
+
+{% endblock %}
+
+{% block javascript %}{% endblock %}
