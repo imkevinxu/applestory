@@ -10,6 +10,7 @@
 .block { display: block; }
 .inline_block { display: inline-block; }
 .hidden { display: none; }
+.error { color: red; }
 
 /* -----------------------------------------
    LOGIN Styles

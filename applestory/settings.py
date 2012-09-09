@@ -120,7 +120,7 @@ DEBUG_TOOLBAR_CONFIG = {
 
 from django.core.urlresolvers import reverse_lazy
 
-LOGIN_REDIRECT_URL = reverse_lazy('index')
+LOGIN_REDIRECT_URL = reverse_lazy('redirect_login')
 
 LOGIN_URL = '/login/'
 
